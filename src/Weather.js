@@ -3,7 +3,6 @@ import axios from "axios";
 import WeatherList from "./WeatherList";
 
 export default function Weather(props) {
-  //let forecast = [];
   let [forecast, newForecast] = useState([]);
 
   console.log("Exequted Weather");
@@ -34,8 +33,7 @@ export default function Weather(props) {
         icon,
       ]);
       console.log("Exequted setTemperature");
-      console.log(response.data.clouds.all);
-      //console.log(forecast);
+      //console.log(response.data.clouds.all);
     }
 
     if (props.city !== "") {
