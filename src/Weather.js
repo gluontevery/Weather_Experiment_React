@@ -55,6 +55,7 @@ export default function Weather(props) {
     return (
       <div>
         <WeatherList
+          city={props.city}
           temperature={forecast[0]}
           description={forecast[1]}
           humidity={forecast[2]}
@@ -67,7 +68,15 @@ export default function Weather(props) {
   } else {
     return (
       <div>
+        <br />
         <h3>The searching engine waits for the city name...</h3>
+        <br />
+        <p className="footer">
+          This scool-project coded by{" "}
+          <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in
+          frame of <a href="https://www.shecodes.io/">SheCodes</a> online
+          course.
+        </p>
       </div>
     );
   }
