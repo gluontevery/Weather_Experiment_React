@@ -12,18 +12,27 @@ export default function WeatherList(props) {
     <div>
       <br />
       <h3>
-        The temperature in {props.city} is {Math.round(props.temperature)}°C
+        Today <span className="date">{props.time}</span> the weather in{" "}
+        {props.city} is:
       </h3>
-      <div className="listParameters">
-        <ul className="listItems">
-          <li> Description: {props.description} </li>
-          <li> Humidity: {props.humidity} </li>
-          <li> Wind: {props.windSpeed} km/h </li>
-          <li> Clouds: {props.clouds}% </li>
-          <li>
-            <WeatherIcons icon={props.icon} color="goldenrod" size={25} />
-          </li>
-        </ul>
+      <div className="row">
+        <div className="col-4">
+          <WeatherIcons icon={props.icon} color="goldenrod" size={55} />{" "}
+          <span className="temperature">
+            {Math.round(props.temperature)}
+            <span className="units">°C</span>{" "}
+          </span>
+        </div>
+        <div className="col-8">
+          <div className="listParameters">
+            <ul className="listItems">
+              <li> Description: {props.description} </li>
+              <li> Humidity: {props.humidity} </li>
+              <li> Wind: {props.windSpeed} km/h </li>
+              <li> Clouds: {props.clouds}% </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <br />
       <p className="footer">

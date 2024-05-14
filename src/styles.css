@@ -1,9 +1,24 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  display: block;
+  padding: 50px;
+  max-width: 800px;
+  margin: 10px auto 10px auto;
+  background: lemonchiffon;
+  border: 2px solid thistle;
+  border-radius: 10px;
 }
 
 .footer {
   text-align: center;
   font-size: 10pt;
+}
+
+.defaultCity {
+  padding: 10px;
+  border: 2px solid blueviolet;
+  border-radius: 5px;
+  text-decoration: none;
+  color: blueviolet;
 }

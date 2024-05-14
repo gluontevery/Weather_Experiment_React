@@ -31,9 +31,10 @@ export default function Weather(props) {
         response.data.wind.speed,
         response.data.clouds.all,
         icon,
+        response.data.dt,
       ]);
       console.log("Exequted setTemperature");
-      //console.log(response.data.clouds.all);
+      console.log(response);
     }
 
     if (props.city !== "") {
@@ -52,6 +53,34 @@ export default function Weather(props) {
   useEffect(apiRequest, [props.city, apiUrl]);
 
   if (props.city !== "") {
+    var a = new Date(forecast[6] * 1000);
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    if (min < 10) {
+      var time =
+        date + " " + month + " " + year + " " + hour + ":0" + min + ":" + sec;
+    } else {
+      var time =
+        date + " " + month + " " + year + " " + hour + ":" + min + ":" + sec;
+    }
     return (
       <div>
         <WeatherList
@@ -62,6 +91,7 @@ export default function Weather(props) {
           windSpeed={forecast[3]}
           clouds={forecast[4]}
           icon={forecast[5]}
+          time={time}
         />
       </div>
     );

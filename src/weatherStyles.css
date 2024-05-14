@@ -7,7 +7,25 @@
   text-align: left;
 }
 
-.footer {
-  text-align: center;
-  font-size: 10pt;
+.temperature {
+  font-size: 55px;
+  color: blueviolet;
+  font-weight: 300;
+}
+
+.temperature .units {
+  position: relative;
+  font-size: 20px;
+  top: -20px;
+  margin-left: 2px;
+}
+
+.date {
+  color: gray;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 700;
 }

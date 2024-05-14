@@ -34,42 +34,72 @@ export default function SearchEngine() {
   }
 
   return (
-    <div className="App">
+    <div>
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-3"></div>
           <div className="col">
-            <a href="/" onClick={(event) => staticCityName(event, "Odessa")}>
+            <a
+              className="defaultCity"
+              href="/"
+              onClick={(event) => staticCityName(event, "Odessa")}
+            >
               Odessa
             </a>
           </div>
           <div className="col">
-            <a href="/" onClick={(event) => staticCityName(event, "Zatoka")}>
+            <a
+              className="defaultCity"
+              href="/"
+              onClick={(event) => staticCityName(event, "Zatoka")}
+            >
               Zatoka
             </a>
           </div>
           <div className="col">
-            <a href="/" onClick={(event) => staticCityName(event, "Tübingen")}>
+            <a
+              className="defaultCity"
+              href="/"
+              onClick={(event) => staticCityName(event, "Tübingen")}
+            >
               Tübingen
             </a>
           </div>
           <div className="col">
-            <a href="/" onClick={(event) => staticCityName(event, "Dresden")}>
+            <a
+              className="defaultCity"
+              href="/"
+              onClick={(event) => staticCityName(event, "Dresden")}
+            >
               Dresden
             </a>
           </div>
-          <div className="col-3"></div>
+          <div className="col">
+            <a
+              className="defaultCity"
+              href="/"
+              onClick={(event) => staticCityName(event, "Berlin")}
+            >
+              Berlin
+            </a>
+          </div>
         </div>
       </div>
       <br />
       <form className="searchForm" onSubmit={getAlert}>
-        <input
-          type="text"
-          placeholder="Enter a city name ..."
-          onChange={updateCityName}
-        />
-        <input type="submit" value="Search" />
+        <div className="row">
+          <div className="col-9">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Enter a city name ..."
+              onChange={updateCityName}
+            />
+          </div>
+          <div className="col-3">
+            <input className="btn btn-primary" type="submit" value="Search" />
+          </div>
+        </div>
       </form>
       <div>
         <Weather city={cityName} />
