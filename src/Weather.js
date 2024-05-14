@@ -74,11 +74,12 @@ export default function Weather(props) {
     var hour = a.getHours();
     var min = a.getMinutes();
     var sec = a.getSeconds();
+    var time = "";
     if (min < 10) {
-      var time =
+      time =
         date + " " + month + " " + year + " " + hour + ":0" + min + ":" + sec;
     } else {
-      var time =
+      time =
         date + " " + month + " " + year + " " + hour + ":" + min + ":" + sec;
     }
     return (
