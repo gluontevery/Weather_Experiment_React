@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import WeatherIcons from "./WeatherIcons";
 
 import "./weatherStyles.css";
 
 export default function WeatherList(props) {
-  //let [forecast, newForecast] = useState([null, null, null, null, null]);
+  //const [temperature, setTemperature] = useState(props.temperature);
 
+  const [temperature, setTemperature] = useState(
+    typeof props.temperature === "number" ? props.temperature : 0
+  );
+  const [unit, setUnit] = useState("C");
+
+  useEffect(() => {
+    if (typeof props.temperature === "number") {
+      setTemperature(props.temperature);
+    }
+    setUnit("C");
+  }, [props.temperature]);
+
+  console.log(`temperature = ${temperature}`);
   console.log("Exequted WeatherList");
+
+  function handleTemperatureChange(event, tempValue, newUnit) {
+    setTemperature(tempValue);
+    setUnit(newUnit);
+    //console.log(`temperature = ${tempValue}`);
+  }
+
+  const celsiusStyle = unit === "C" ? { fontWeight: "bold" } : {};
+  const fahrenheitStyle = unit === "F" ? { fontWeight: "bold" } : {};
 
   return (
     <div>
@@ -19,8 +41,29 @@ export default function WeatherList(props) {
         <div className="col-4">
           <WeatherIcons icon={props.icon} color="goldenrod" size={55} />{" "}
           <span className="temperature">
-            {Math.round(props.temperature)}
-            <span className="units">°C</span>{" "}
+            {Math.round(temperature)}
+            <span
+              className="units"
+              style={celsiusStyle}
+              onClick={(event) =>
+                handleTemperatureChange(event, props.temperature, "C")
+              }
+            >
+              °C
+            </span>
+            <span
+              className="units"
+              style={fahrenheitStyle}
+              onClick={(event) =>
+                handleTemperatureChange(
+                  event,
+                  (props.temperature * 9) / 5 + 32,
+                  "F"
+                )
+              }
+            >
+              |F
+            </span>
           </span>
         </div>
         <div className="col-8">
@@ -36,9 +79,9 @@ export default function WeatherList(props) {
       </div>
       <br />
       <p className="footer">
-        This scool-project coded by{" "}
-        <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in frame
-        of <a href="https://www.shecodes.io/">SheCodes</a> online course.
+        This project coded by{" "}
+        <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in the
+        frame of <a href="https://www.shecodes.io/">SheCodes</a> online course.
       </p>
     </div>
   );

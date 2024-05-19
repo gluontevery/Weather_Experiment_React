@@ -103,10 +103,9 @@ export default function Weather(props) {
         <h3>The searching engine waits for the city name...</h3>
         <br />
         <p className="footer">
-          This scool-project coded by{" "}
-          <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in
-          frame of <a href="https://www.shecodes.io/">SheCodes</a> online
-          course.
+          This project coded by{" "}
+          <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in the
+          frame of <a href="https://www.shecodes.io/">SheCodes</a> online course
         </p>
       </div>
     );
