@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import WeatherIcons from "./WeatherIcons";
 
 import "./weatherStyles.css";
+import Forecast from "./Forecast";
 
 export default function WeatherList(props) {
   //const [temperature, setTemperature] = useState(props.temperature);
@@ -77,11 +78,12 @@ export default function WeatherList(props) {
           </div>
         </div>
       </div>
+      <Forecast apiKey={props.apiKey} lat={props.lat} lon={props.lon} />
       <br />
       <p className="footer">
         This project coded by{" "}
         <a href="https://github.com/gluontevery">Tatiana Tatarchuk</a> in the
-        frame of <a href="https://www.shecodes.io/">SheCodes</a> online course.
+        frame of <a href="https://www.shecodes.io/">SheCodes</a> online course
       </p>
     </div>
   );

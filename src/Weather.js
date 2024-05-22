@@ -12,29 +12,19 @@ export default function Weather(props) {
 
   function apiRequest() {
     function setTemperature(response) {
-      let icon = "";
-      if (response.data.clouds.all < 20) {
-        icon = "CLEAR_DAY";
-      } else if (
-        response.data.clouds.all >= 20 &&
-        response.data.clouds.all < 75
-      ) {
-        icon = "PARTLY_CLOUDY_DAY";
-      } else {
-        icon = "CLOUDY";
-      }
-
       newForecast([
         response.data.main.temp,
         response.data.weather[0].description,
         response.data.main.humidity,
         response.data.wind.speed,
         response.data.clouds.all,
-        icon,
+        response.data.weather[0].icon,
         response.data.dt,
+        response.data.coord.lat,
+        response.data.coord.lon,
       ]);
-      console.log("Exequted setTemperature");
-      console.log(response);
+      //console.log("Exequted setTemperature");
+      //console.log(response);
     }
 
     if (props.city !== "") {
@@ -93,6 +83,9 @@ export default function Weather(props) {
           clouds={forecast[4]}
           icon={forecast[5]}
           time={time}
+          apiKey={apiKey}
+          lat={forecast[7]}
+          lon={forecast[8]}
         />
       </div>
     );
