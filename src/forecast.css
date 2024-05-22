@@ -8,7 +8,7 @@
   background-color: blueviolet;
   width: 66em;
   margin: 30px auto;
-  background-image: linear-gradient(left, white 2%, #e6e6e6 50%, white 98%);
+  background-image: linear-gradient(to left, white 2%, #e6e6e6 50%, white 98%);
 
   background-image: -webkit-gradient(
     linear,
