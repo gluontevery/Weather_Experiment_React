@@ -37,6 +37,10 @@ export default function Forecast(props) {
   const lon = typeof props.lon === "number" ? props.lon : 0;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,hourly,minutely,alerts&appid=${apiKey}&units=metric`;
 
+  let convertToFahrenheit = (celsius) => {
+    return (celsius * 9) / 5 + 32;
+  };
+
   function apiRequest() {
     function getData(response) {
       console.log(response);
@@ -77,10 +81,19 @@ export default function Forecast(props) {
               </div>
               <div>
                 <span className="tMax">
-                  {Math.round(oneDayForecast.temp.max)}°
+                  {props.units === "C"
+                    ? `${Math.round(oneDayForecast.temp.max)}°`
+                    : `${Math.round(
+                        convertToFahrenheit(oneDayForecast.temp.max)
+                      )}°`}
+                  °
                 </span>
                 <span className="tMin">
-                  {Math.round(oneDayForecast.temp.min)}°
+                  {props.units === "C"
+                    ? `${Math.round(oneDayForecast.temp.min)}°`
+                    : `${Math.round(
+                        convertToFahrenheit(oneDayForecast.temp.min)
+                      )}°`}
                 </span>
               </div>
             </div>

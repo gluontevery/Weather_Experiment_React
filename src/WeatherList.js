@@ -78,7 +78,12 @@ export default function WeatherList(props) {
           </div>
         </div>
       </div>
-      <Forecast apiKey={props.apiKey} lat={props.lat} lon={props.lon} />
+      <Forecast
+        apiKey={props.apiKey}
+        lat={props.lat}
+        lon={props.lon}
+        units={unit}
+      />
       <br />
       <p className="footer">
         This project coded by{" "}
