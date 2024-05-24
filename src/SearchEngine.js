@@ -38,7 +38,7 @@ export default function SearchEngine() {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col col-sm">
             <a
               className="defaultCity"
               href="/"
@@ -47,7 +47,7 @@ export default function SearchEngine() {
               Odessa
             </a>
           </div>
-          <div className="col">
+          <div className="col col-sm">
             <a
               className="defaultCity"
               href="/"
@@ -56,7 +56,7 @@ export default function SearchEngine() {
               Zatoka
             </a>
           </div>
-          <div className="col">
+          <div className="col col-sm">
             <a
               className="defaultCity"
               href="/"
@@ -65,7 +65,7 @@ export default function SearchEngine() {
               Tübingen
             </a>
           </div>
-          <div className="col">
+          <div className="col col-sm">
             <a
               className="defaultCity"
               href="/"
@@ -74,7 +74,7 @@ export default function SearchEngine() {
               Dresden
             </a>
           </div>
-          <div className="col">
+          <div className="col col-sm">
             <a
               className="defaultCity"
               href="/"
@@ -88,7 +88,7 @@ export default function SearchEngine() {
       <br />
       <form className="searchForm" onSubmit={getAlert}>
         <div className="row">
-          <div className="col-9">
+          <div className="col-9 col-sm-9">
             <input
               className="form-control"
               type="text"
@@ -96,7 +96,7 @@ export default function SearchEngine() {
               onChange={updateCityName}
             />
           </div>
-          <div className="col-3">
+          <div className="col-3 col-sm-3">
             <input className="btn btn-primary" type="submit" value="Search" />
           </div>
         </div>
