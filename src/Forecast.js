@@ -85,15 +85,14 @@ export default function Forecast(props) {
                     ? `${Math.round(oneDayForecast.temp.max)}°`
                     : `${Math.round(
                         convertToFahrenheit(oneDayForecast.temp.max)
-                      )}°`}
-                  °
+                      )}`}
                 </span>
                 <span className="tMin">
                   {props.units === "C"
                     ? `${Math.round(oneDayForecast.temp.min)}°`
                     : `${Math.round(
                         convertToFahrenheit(oneDayForecast.temp.min)
-                      )}°`}
+                      )}`}
                 </span>
               </div>
             </div>
